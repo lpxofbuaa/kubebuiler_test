@@ -46,6 +46,8 @@ type LpxpodStatus struct {
 //+kubebuilder:subresource:status
 
 // Lpxpod is the Schema for the lpxpods API
+// +kubebuilder:printcolumn:name="Schedule",type=string,JSONPath=`.spec.schedule`
+// +kubebuilder:printcolumn:name="Phase",type=string,JSONPath=`.status.phase`
 type Lpxpod struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`

@@ -98,14 +98,14 @@ func (r *LpxpodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctr
 			Name:      instance.Spec.Deploymentname,
 			Namespace: instance.Namespace,
 		}
+		dep = getDeployment(instance)
+		err = controllerutil.SetControllerReference(instance, dep, r.Scheme)
+		if err != nil {
+			return ctrl.Result{}, err
+		}
 		err := r.Client.Get(context.TODO(), find, dep)
 		if err != nil && errors.IsNotFound(err) {
-			dep = getDeployment(instance)
 			err = r.Create(context.TODO(), dep)
-			if err != nil {
-				return ctrl.Result{}, err
-			}
-			err = controllerutil.SetControllerReference(instance, dep, r.Scheme)
 			if err != nil {
 				return ctrl.Result{}, err
 			}
