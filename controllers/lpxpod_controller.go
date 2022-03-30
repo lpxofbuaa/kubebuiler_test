@@ -151,10 +151,11 @@ func getDeployment(instance *crdtryv1.Lpxpod) *appsv1.Deployment {
 				Spec: corev1.PodSpec{
 					Containers: []corev1.Container{{
 						Image: "lpx_test_springboot:v1",
-						Name:  instance.Name + "_" + instance.Spec.Deploymentname + "_container",
+						Name:  instance.Name,
 						Ports: []corev1.ContainerPort{{
 							ContainerPort: instance.Spec.Podport,
-							Name:          instance.Name + "_" + instance.Spec.Deploymentname + "_container",
+							HostPort:      instance.Spec.Podport,
+							Name:          instance.Name,
 						}},
 						Command: []string{"/usr/bin/java"},
 						Args:    []string{"-jar", "/test.jar"},

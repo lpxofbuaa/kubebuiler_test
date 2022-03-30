@@ -3,4 +3,6 @@ kind: Lpxpod
 metadata:
   name: lpxpod-sample
 spec:
-  # TODO(user): Add fields here
+  podport: 8000
+  deploymentname: lpxtest
+  schedule: 2022-03-30 22:40:00

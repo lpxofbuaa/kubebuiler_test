@@ -35,13 +35,24 @@ spec:
           spec:
             description: LpxpodSpec defines the desired state of Lpxpod
             properties:
-              foo:
+              deploymentname:
+                type: string
+              podport:
                 description: Foo is an example field of Lpxpod. Edit lpxpod_types.go
-                  to remove/update
+                  to remove/update Foo string `json:"foo,omitempty"`
+                format: int32
+                type: integer
+              schedule:
                 type: string
             type: object
           status:
             description: LpxpodStatus defines the observed state of Lpxpod
+            properties:
+              phase:
+                description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                  of cluster Important: Run "make" to regenerate code after modifying
+                  this file'
+                type: string
             type: object
         type: object
     served: true
