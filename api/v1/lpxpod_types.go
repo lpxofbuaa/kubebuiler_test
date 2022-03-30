@@ -29,13 +29,17 @@ type LpxpodSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of Lpxpod. Edit lpxpod_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// Foo string `json:"foo,omitempty"`
+	Podport        int32  `json:"podport,omitempty"`
+	Deploymentname string `json:"deploymentname,omitempty"`
+	Schedule       string `json:"schedule,omitempty"`
 }
 
 // LpxpodStatus defines the observed state of Lpxpod
 type LpxpodStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+	Phase string `json:"phase,omitempty"`
 }
 
 //+kubebuilder:object:root=true
