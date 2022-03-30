@@ -1,0 +1,20 @@
+# permissions for end users to view lpxpods.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: lpxpod-viewer-role
+rules:
+- apiGroups:
+  - crdtry.kubebuilder.test
+  resources:
+  - lpxpods
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - crdtry.kubebuilder.test
+  resources:
+  - lpxpods/status
+  verbs:
+  - get

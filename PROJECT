@@ -1,0 +1,16 @@
+domain: kubebuilder.test
+layout:
+- go.kubebuilder.io/v3
+projectName: crdtry
+repo: kubebuilder.test/crdtry
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: kubebuilder.test
+  group: crdtry
+  kind: Lpxpod
+  path: kubebuilder.test/crdtry/api/v1
+  version: v1
+version: "3"

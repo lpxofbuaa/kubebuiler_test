@@ -1,0 +1,24 @@
+# permissions for end users to edit lpxpods.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: lpxpod-editor-role
+rules:
+- apiGroups:
+  - crdtry.kubebuilder.test
+  resources:
+  - lpxpods
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - crdtry.kubebuilder.test
+  resources:
+  - lpxpods/status
+  verbs:
+  - get

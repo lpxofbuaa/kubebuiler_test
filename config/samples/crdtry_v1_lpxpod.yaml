@@ -1,0 +1,6 @@
+apiVersion: crdtry.kubebuilder.test/v1
+kind: Lpxpod
+metadata:
+  name: lpxpod-sample
+spec:
+  # TODO(user): Add fields here
