@@ -18,10 +18,9 @@ limitations under the License.
 package fake
 
 import (
-	v1 "generated/crdtry/clientset/versioned/typed/crdtry/v1"
-
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
+	v1 "kubebuilder.test/crdtry/generated/crdtry/clientset/versioned/typed/crdtry/v1"
 )
 
 type FakeCrdtryV1 struct {

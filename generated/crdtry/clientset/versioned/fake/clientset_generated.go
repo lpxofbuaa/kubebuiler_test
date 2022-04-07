@@ -18,15 +18,14 @@ limitations under the License.
 package fake
 
 import (
-	clientset "generated/crdtry/clientset/versioned"
-	crdtryv1 "generated/crdtry/clientset/versioned/typed/crdtry/v1"
-	fakecrdtryv1 "generated/crdtry/clientset/versioned/typed/crdtry/v1/fake"
-
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"
 	fakediscovery "k8s.io/client-go/discovery/fake"
 	"k8s.io/client-go/testing"
+	clientset "kubebuilder.test/crdtry/generated/crdtry/clientset/versioned"
+	crdtryv1 "kubebuilder.test/crdtry/generated/crdtry/clientset/versioned/typed/crdtry/v1"
+	fakecrdtryv1 "kubebuilder.test/crdtry/generated/crdtry/clientset/versioned/typed/crdtry/v1/fake"
 )
 
 // NewSimpleClientset returns a clientset that will respond with the provided objects.

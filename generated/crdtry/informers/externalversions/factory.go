@@ -18,9 +18,6 @@ limitations under the License.
 package externalversions
 
 import (
-	versioned "generated/crdtry/clientset/versioned"
-	crdtry "generated/crdtry/informers/externalversions/crdtry"
-	internalinterfaces "generated/crdtry/informers/externalversions/internalinterfaces"
 	reflect "reflect"
 	sync "sync"
 	time "time"
@@ -29,6 +26,9 @@ import (
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
+	versioned "kubebuilder.test/crdtry/generated/crdtry/clientset/versioned"
+	crdtry "kubebuilder.test/crdtry/generated/crdtry/informers/externalversions/crdtry"
+	internalinterfaces "kubebuilder.test/crdtry/generated/crdtry/informers/externalversions/internalinterfaces"
 )
 
 // SharedInformerOption defines the functional option type for SharedInformerFactory.

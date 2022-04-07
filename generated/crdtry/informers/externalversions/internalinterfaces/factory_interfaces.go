@@ -18,12 +18,12 @@ limitations under the License.
 package internalinterfaces
 
 import (
-	versioned "generated/crdtry/clientset/versioned"
 	time "time"
 
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	cache "k8s.io/client-go/tools/cache"
+	versioned "kubebuilder.test/crdtry/generated/crdtry/clientset/versioned"
 )
 
 // NewInformerFunc takes versioned.Interface and time.Duration to return a SharedIndexInformer.

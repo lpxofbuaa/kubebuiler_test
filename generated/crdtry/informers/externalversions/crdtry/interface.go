@@ -18,8 +18,8 @@ limitations under the License.
 package crdtry
 
 import (
-	v1 "generated/crdtry/informers/externalversions/crdtry/v1"
-	internalinterfaces "generated/crdtry/informers/externalversions/internalinterfaces"
+	v1 "kubebuilder.test/crdtry/generated/crdtry/informers/externalversions/crdtry/v1"
+	internalinterfaces "kubebuilder.test/crdtry/generated/crdtry/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to each of this group's versions.

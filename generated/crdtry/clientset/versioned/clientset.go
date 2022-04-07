@@ -19,12 +19,12 @@ package versioned
 
 import (
 	"fmt"
-	crdtryv1 "generated/crdtry/clientset/versioned/typed/crdtry/v1"
 	"net/http"
 
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"
+	crdtryv1 "kubebuilder.test/crdtry/generated/crdtry/clientset/versioned/typed/crdtry/v1"
 )
 
 type Interface interface {

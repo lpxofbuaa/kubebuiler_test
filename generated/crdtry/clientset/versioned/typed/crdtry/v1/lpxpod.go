@@ -19,7 +19,6 @@ package v1
 
 import (
 	"context"
-	scheme "generated/crdtry/clientset/versioned/scheme"
 	"time"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -27,6 +26,7 @@ import (
 	watch "k8s.io/apimachinery/pkg/watch"
 	rest "k8s.io/client-go/rest"
 	v1 "kubebuilder.test/crdtry/api/crdtry/v1"
+	scheme "kubebuilder.test/crdtry/generated/crdtry/clientset/versioned/scheme"
 )
 
 // LpxpodsGetter has a method to return a LpxpodInterface.

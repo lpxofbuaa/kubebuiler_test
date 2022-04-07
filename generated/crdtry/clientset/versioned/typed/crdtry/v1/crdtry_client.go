@@ -18,11 +18,11 @@ limitations under the License.
 package v1
 
 import (
-	"generated/crdtry/clientset/versioned/scheme"
 	"net/http"
 
 	rest "k8s.io/client-go/rest"
 	v1 "kubebuilder.test/crdtry/api/crdtry/v1"
+	"kubebuilder.test/crdtry/generated/crdtry/clientset/versioned/scheme"
 )
 
 type CrdtryV1Interface interface {

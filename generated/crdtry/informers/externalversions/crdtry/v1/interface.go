@@ -18,7 +18,7 @@ limitations under the License.
 package v1
 
 import (
-	internalinterfaces "generated/crdtry/informers/externalversions/internalinterfaces"
+	internalinterfaces "kubebuilder.test/crdtry/generated/crdtry/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.

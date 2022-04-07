@@ -19,9 +19,6 @@ package v1
 
 import (
 	"context"
-	versioned "generated/crdtry/clientset/versioned"
-	internalinterfaces "generated/crdtry/informers/externalversions/internalinterfaces"
-	v1 "generated/crdtry/listers/crdtry/v1"
 	time "time"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -29,6 +26,9 @@ import (
 	watch "k8s.io/apimachinery/pkg/watch"
 	cache "k8s.io/client-go/tools/cache"
 	crdtryv1 "kubebuilder.test/crdtry/api/crdtry/v1"
+	versioned "kubebuilder.test/crdtry/generated/crdtry/clientset/versioned"
+	internalinterfaces "kubebuilder.test/crdtry/generated/crdtry/informers/externalversions/internalinterfaces"
+	v1 "kubebuilder.test/crdtry/generated/crdtry/listers/crdtry/v1"
 )
 
 // LpxpodInformer provides access to a shared informer and lister for
