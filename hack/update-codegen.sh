@@ -32,7 +32,7 @@ rm -rf "${APIS_PKG}/${GROUP}" && mkdir -p "${APIS_PKG}/${GROUP}" && cp -r "${API
 #                  instead of the $GOPATH directly. For normal projects this can be dropped.
 #client,informer,lister(注意: code-generator 生成的deepcopy不适配 kubebuilder 所生成的api)
 bash "${CODEGEN_PKG}"/generate-groups.sh "client,informer,lister" \
-  ${MODULE}/${OUTPUT_PKG} ${MODULE}/${APIS_PKG} \
+  ${OUTPUT_PKG} ${MODULE}/${APIS_PKG} \
   ${GROUP_VERSION} \
   --go-header-file "${SCRIPT_ROOT}"/hack/boilerplate.go.txt
 #  --output-base "${SCRIPT_ROOT}"
