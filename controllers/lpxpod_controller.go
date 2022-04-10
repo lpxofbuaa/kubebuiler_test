@@ -89,6 +89,7 @@ func (r *LpxpodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctr
 		d := schedule_time.Sub(time.Now().Local())
 		if d > 0 {
 			reqLogger.Info("continue sleep", fmt.Sprintf("%v", d), "Seconds")
+			r.Status().Update(context.TODO(), instance)
 			return ctrl.Result{RequeueAfter: d}, nil
 		}
 		instance.Status.Phase = StatusRunning

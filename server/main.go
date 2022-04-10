@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"path/filepath"
 
+	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/util/homedir"
 	crdtryVersioned "kubebuilder.test/crdtry/generated/crdtry/clientset/versioned"
@@ -62,19 +63,8 @@ func GetLpxPod(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(405)
 		return
 	}
-	body, err := ioutil.ReadAll(r.Body)
-	if err != nil {
-		w.WriteHeader(500)
-		fmt.Fprintf(w, err.Error())
-		return
-	}
-	lpxpodReq := request.LpxpodRequest{}
-	err = json.Unmarshal(body, &lpxpodReq)
-	if err != nil {
-		w.WriteHeader(500)
-		fmt.Fprintf(w, err.Error())
-		return
-	}
+	q := r.URL.Query()
+	lpxpodReq := request.LpxpodRequest{Name: q.Get("name"), Namespace: q.Get("namespace")}
 	msg, err := handler.HandleGetLpxpodReq(&lpxpodReq)
 	if err != nil {
 		w.WriteHeader(500)
@@ -106,9 +96,18 @@ func main() {
 	} else {
 		kubeconfig = flag.String("kubeconfig", "", "absolute path to the kubeconfig file")
 	}
+	incluster := flag.Bool("i", false, "if in the cluster pod")
 	flag.Parse()
 
-	config, err := clientcmd.BuildConfigFromFlags("", *kubeconfig)
+	var config *rest.Config
+	var err error
+	if *incluster {
+		fmt.Println("In Cluster!")
+		config, err = rest.InClusterConfig()
+	} else {
+		fmt.Printf("Default!")
+		config, err = clientcmd.BuildConfigFromFlags("", *kubeconfig)
+	}
 	if err != nil {
 		panic(err.Error())
 	}
