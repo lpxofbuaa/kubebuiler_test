@@ -20,5 +20,6 @@ spec:
         - name: web
           containerPort: 5000
           protocol: TCP
+        command: "/bin/bash"
       serviceAccountName: lpxpod-server
       
