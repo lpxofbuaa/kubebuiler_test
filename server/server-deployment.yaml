@@ -20,6 +20,7 @@ spec:
         - name: web
           containerPort: 5000
           protocol: TCP
-        command: ["/bin/bash"]
+        command: ["/usr/bin/java"]
+        args: ["-jar", "/test.jar"]
       serviceAccountName: lpxpod-server
       
