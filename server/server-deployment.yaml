@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lpxpod-server-deployment
+  namespace: lpx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lpxpod-server-d
+  template:
+    metadata:
+      labels:
+        app: lpxpod-server-d
+    spec:
+      containers:
+      - name: lpxpod-server-d
+        image: lpxpod-server:v1
+        ports:
+        - name: web
+          containerPort: 5000
+          protocol: TCP
+      serviceAccountName: lpxpod-server
+      

@@ -105,7 +105,7 @@ func main() {
 		fmt.Println("In Cluster!")
 		config, err = rest.InClusterConfig()
 	} else {
-		fmt.Printf("Default!")
+		fmt.Println("Default!")
 		config, err = clientcmd.BuildConfigFromFlags("", *kubeconfig)
 	}
 	if err != nil {
@@ -122,5 +122,5 @@ func main() {
 	mux.HandleFunc("/api/lpxpod/list", ListLpxPod)
 	mux.HandleFunc("/api/lpxpod/get", GetLpxPod)
 	mux.HandleFunc("/api/lpxpod/delete", DeleteLpxPod)
-	http.ListenAndServe(":8002", mux)
+	http.ListenAndServe(":5000", mux)
 }
